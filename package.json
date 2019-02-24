@@ -1,0 +1,38 @@
+{
+  "name": "mongoatlasawsserverless",
+  "version": "1.0.0",
+  "scripts": {
+    "prettier": "prettier \"**/*.{js,json,yaml,yml}\" --write",
+    "test": "jest",
+    "local:create": "serverless invoke local --function create --path __mocks__/functions/create-event.json",
+    "local:find": "serverless invoke local --function find --path __mocks__/functions/find-event.json"
+  },
+  "author": "Jon Preece",
+  "devDependencies": {
+    "aws-sdk": "^2.409.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-source-map-support": "^2.0.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "jest": "^24.1.0",
+    "prettier": "^1.16.4",
+    "serverless-offline": "^4.6.0",
+    "serverless-webpack": "^5.2.0",
+    "webpack": "^4.29.5",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "mongoose": "^5.4.15",
+    "source-map-support": "^0.5.10"
+  }
+}

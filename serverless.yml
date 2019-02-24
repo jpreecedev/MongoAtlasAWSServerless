@@ -1,0 +1,39 @@
+service: MongoAtlasAWSServerless
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+  environment: ${file(env.yml):default}
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-2
+  environment:
+    connectionString: ${self:custom.environment.connectionString}
+
+functions:
+  create:
+    handler: functions/create.main
+    events:
+      - http:
+          path: user
+          method: post
+          cors: true
+  find:
+    handler: functions/find.main
+    events:
+      - http:
+          path: user
+          method: get
+          cors: true
+
+resources:
+  - ${file(resources/api-gateway-errors.yml)}
