@@ -21,14 +21,14 @@ provider:
 
 functions:
   create:
-    handler: functions/create.main
+    handler: src/create.handler
     events:
       - http:
           path: user
           method: post
           cors: true
   find:
-    handler: functions/find.main
+    handler: src/find.handler
     events:
       - http:
           path: user

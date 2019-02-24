@@ -6,9 +6,8 @@ const { success, failure } = require('../libs/response')
  * Create a user.
  */
 
-async function main({ body }, context) {
+async function handler({ body }) {
   const { username, firstName, lastName } = JSON.parse(body)
-  context.callbackWaitsForEmptyEventLoop = false
 
   try {
     const user = await connector.then(() => {
@@ -28,4 +27,4 @@ async function main({ body }, context) {
   }
 }
 
-exports.main = main
+exports.handler = handler

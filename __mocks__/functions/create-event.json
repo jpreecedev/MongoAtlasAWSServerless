@@ -1,6 +1,3 @@
 {
-  "body": "{\"username\": \"jon@developerhandbook.com\",\"firstName\": \"Jon\",\"lastName\": \"Preece\"}",
-  "context": {
-    "callbackWaitsForEmptyEventLoop": true
-  }
+  "body": "{\"username\": \"jon@developerhandbook.com\",\"firstName\": \"Jon\",\"lastName\": \"Preece\"}"
 }

@@ -7,9 +7,8 @@ const { success, failure } = require('../libs/response')
  * Find a user by username
  */
 
-async function main({ queryStringParameters }, context) {
+async function handler({ queryStringParameters }) {
   const { username } = queryStringParameters
-  context.callbackWaitsForEmptyEventLoop = false
 
   try {
     const user = await connector.then(() => {
@@ -21,4 +20,4 @@ async function main({ queryStringParameters }, context) {
   }
 }
 
-exports.main = main
+exports.handler = handler
